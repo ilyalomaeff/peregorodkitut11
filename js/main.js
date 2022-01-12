@@ -1,7 +1,7 @@
 $(function () {
     $('.doors-button').on('click', function(event) {
         $('.doors-button').not(this).removeClass('active').next().slideUp(150);
-        $(this).toggleClass('active').next().slideToggle(150)
+        $(this).toggleClass('active').next().slideToggle(150).toggleClass('active')
     });
     $('.tab-btn').on('click', function() {
         $('.tab-btn').removeClass('active');
@@ -51,5 +51,108 @@ $(function () {
         $('.burger').toggleClass('active');
         $('.top-header-menu').toggleClass('active');
         $('body').toggleClass('scroll-lock');
+    });
+    $('.top-header-buttons__search').on('click', function() {
+        $('.form-header-search').toggleClass('active');
+        $('.top-header-buttons__search').toggleClass('active');
+    });
+    $('.overlay').on('click', function() {
+        $('.popup_1-1').removeClass('active');
+        $('.popup_2').removeClass('active');
+        $('.popup_3').removeClass('active');
+        $('.popup_4').removeClass('active');
+        $('.popup_5').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('body').toggleClass('scroll-lock');
+    });
+    $('.popup_1 button').on('click', function() {
+        $('.popup_1-1').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('body').toggleClass('scroll-lock');
+    });
+    $('.button-to-popup_1').on('click', function() {
+        $('.popup_1-1').toggleClass('active');
+        $('.overlay').toggleClass('active');
+        $('body').toggleClass('scroll-lock');
+    });
+    $('.header-dropdowns-ad-gbl button').on('click', function() {
+        $('.header-dropdowns-ad-gbl').removeClass('active');
+        $('body').removeClass('scroll-lock');
+    });
+
+    $('.doors-button-ad-1').on('click', function() {
+        $('.header-dropdowns-ad-doors').toggleClass('active');
+        $('body').toggleClass('scroll-lock');
+    });
+    $('.doors-button-ad-2').on('click', function() {
+        $('.header-dropdowns-ad-partitions').toggleClass('active');
+        $('body').toggleClass('scroll-lock');
+    });
+    $('.doors-button-ad-3').on('click', function() {
+        $('.header-dropdowns-ad-walls').toggleClass('active');
+        $('body').toggleClass('scroll-lock');
+    });
+    
+
+
+    $('.button-to-popup_2').on('click', function() {
+        $('.popup_2').toggleClass('active');
+        $('.overlay').toggleClass('active');
+        $('body').toggleClass('scroll-lock');
+    });
+    $('.popup_2 button').on('click', function() {
+        $('.popup_2').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('body').removeClass('scroll-lock');
+    });
+    $('.button-to-popup_3').on('click', function() {
+        $('.popup_3').toggleClass('active');
+        $('.overlay').toggleClass('active');
+        $('body').toggleClass('scroll-lock');
+    });
+    $('.popup_3 button').on('click', function() {
+        $('.popup_3').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('body').removeClass('scroll-lock');
+    });
+    $('.button-to-popup_4').on('click', function() {
+        $('.popup_4').toggleClass('active');
+        $('.overlay').toggleClass('active');
+        $('body').toggleClass('scroll-lock');
+    });
+    $('.popup_4 button').on('click', function() {
+        $('.popup_4').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('body').removeClass('scroll-lock');
+    });
+    $('.button-to-popup_5').on('click', function() {
+        $('.popup_5').toggleClass('active');
+        $('.overlay').toggleClass('active');
+        $('body').toggleClass('scroll-lock');
+    });
+    $('.popup_5 button').on('click', function() {
+        $('.popup_5').removeClass('active');
+        $('.overlay').removeClass('active');
+        $('body').removeClass('scroll-lock');
+    });
+    $('.doors-button').hover(function() {
+        $('.doors-button').not(this).removeClass('active').next().slideUp(150);
+        $(this).toggleClass('active').next().slideToggle(150)
+    }, function() {
+    });
+    $('.doors-dropdown').hover(function() {
+    }, function() {
+        $('.doors-button').not(this).removeClass('active').next().slideUp(150);
+        $(this).toggleClass('active').next().slideToggle(150)
+    });
+    $(window).on('scroll', function() {
+        if ($(this).scrollTop() >= 250) {
+            $('.scroll-arrow').addClass('active');
+        } else {
+            $('.scroll-arrow').removeClass('active');
+        }
+    });
+    $('.scroll-arrow').on('click', function() {
+        $('html').animate({scrollTop: 0}, 500);
     })
 })
